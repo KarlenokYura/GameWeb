@@ -1,0 +1,81 @@
+.record-skill-image {
+    position: relative;
+    left: 1.4%;
+    height: 62.5%;
+    width: 11.95%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.record-skill-image img {
+    height: 100%;
+}
+
+.record-skill-raceclass {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-skill-raceclass .skill-race {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-skill-raceclass .skill-class {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-skill-typelevel {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-skill-typelevel .skill-type {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-skill-typelevel .skill-level {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-skill-healthmana {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-skill-healthmana .skill-health {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-skill-healthmana .skill-mana {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}

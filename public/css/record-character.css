@@ -1,0 +1,88 @@
+.record-character-image {
+    position: relative;
+    left: 1.4%;
+    height: 62.5%;
+    width: 11.95%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.record-character-image img {
+    height: 100%;
+}
+
+.record-character-info {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-character-info .character-race {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-character-info .character-class {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-character-info .character-location {
+    position: relative;
+    margin-top: -4.4%;
+    left: 68.5%;
+    width: 30%;
+}
+
+.record-character-levelexp {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-character-levelexp .character-level {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-character-levelexp .character-exp {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-character-healthmana {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-character-healthmana .character-health {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-character-healthmana .character-mana {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}

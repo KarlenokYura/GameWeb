@@ -1,0 +1,34 @@
+<div class="monster-tab">
+    <button class="order" onclick="orderMonster('{{order}}')">Order by name ({{order}})</button>
+    <input class="text" name="text"></input>
+    <button class="search" onclick="searchMonster()">Search</button>
+</div>
+<div class="container">
+    <div class="block">
+        {{#each monsters}}
+            {{>monster login=../login character=../character location=../location}}
+        {{/each}}
+    </div>
+</div>
+<div class="monster-box">
+    <button class="back" onclick="window.location.href = '/location?login={{login}}&character={{character}}'">Back to location</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function orderMonster(order) {
+        await fetch(`/ordermonster?login={{login}}&character={{character}}&location={{location}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({order: order})
+            }).then(() => window.location.href = `/monster?login={{login}}&character={{character}}&location={{location}}`);
+    }
+
+    async function searchMonster() {
+        await fetch(`/searchmonster?login={{login}}&character={{character}}&location={{location}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({like: document.getElementsByName('text')[0].value})
+            }).then(() => window.location.href = `/monster?login={{login}}&character={{character}}&location={{location}}`);
+    }
+</script>

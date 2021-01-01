@@ -1,0 +1,32 @@
+<div class="monster-tab">
+    <button class="item" onclick="window.location.href = '/drop?login={{login}}&character={{character}}&location={{location}}&monster={{monster.monster_name}}'">Items</button>
+    <button class="skill" onclick="window.location.href = '/spell?login={{login}}&character={{character}}&location={{location}}&monster={{monster.monster_name}}'">Skills</button>
+</div>
+<div class="monster-container">
+    <h1>{{monster.monster_name}}</h1>
+    <div class="monster-image">
+        <img src={{monster.monster_image}}>
+    </div>
+    <div class="monster-info">
+        <div class="monster-race"><h4>Race: {{monster.race_name}}</h4></div>
+        <div class="monster-class"><h4>Class: {{monster.class_name}}</h4></div>
+        <div class="monster-location"><h4>Location: {{monster.location_name}}</h4></div>
+    </div>
+    <div class="monster-levelexp">
+        <div class="monster-level"><h4>Level: {{monster.monster_level}} / 20</h4></div>
+    </div>
+    <div class="monster-healthmana">
+        <div class="monster-health"><h4>Health: {{monster.monster_health}} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span> / {{monster.monster_max_health}} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span></h4></div>
+        <div class="monster-mana"><h4>Mana: {{monster.monster_mana}} <span class="green-text">+ {{#if monster.item_mana}}{{monster.item_mana}}{{else}}0{{/if}}</span> / {{monster.monster_max_mana}} <span class="green-text">+ {{#if monster.item_mana}}{{monster.item_mana}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+        <div class="monster-talants">
+        <div class="monster-power"><h4>Power: {{monster.monster_power}} <span class="green-text">+ {{#if monster.item_power}}{{monster.item_power}}{{else}}0{{/if}}</span></h4></div>
+        <div class="monster-speed"><h4>Speed: {{monster.monster_speed}} <span class="green-text">+ {{#if monster.item_speed}}{{monster.item_speed}}{{else}}0{{/if}}</span></h4></div>
+        <div class="monster-mind"><h4>Mind: {{monster.monster_mind}} <span class="green-text">+ {{#if monster.item_mind}}{{monster.item_mind}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+</div>
+<div class="monster-back">
+    <button class="attack" onclick="window.location.href = '/attack?login={{login}}&character={{character}}&location={{location}}&monster={{monster.monster_name}}'">Attack monster</button>
+    <button class="back" onclick="window.location.href = '/monster?login={{login}}&character={{character}}&location={{location}}'">Back to monsters</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>

@@ -1,0 +1,34 @@
+<div class="drop-tab">
+    <button class="order" onclick="orderDrop('{{order}}')">Order by name ({{order}})</button>
+    <input class="text" name="text"></input>
+    <button class="search" onclick="searchDrop()">Search</button>
+</div>
+<div class="container">
+    <div class="block">
+        {{#each drops}}
+            {{>drop login=../login character=../character location=../location monster=../monster}}
+        {{/each}}
+    </div>
+</div>
+<div class="drop-box">
+    <button class="back" onclick="window.location.href = '/checkmonster?login={{login}}&character={{character}}&location={{location}}&monster={{monster}}'">Back to monster</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function orderDrop(order) {
+        await fetch(`/orderdrop?login={{login}}&character={{character}}&location={{location}}&monster={{monster}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({order: order})
+            }).then(() => window.location.href = `/drop?login={{login}}&character={{character}}&location={{location}}&monster={{monster}}`);
+    }
+
+    async function searchDrop() {
+        await fetch(`/searchdrop?login={{login}}&character={{character}}&location={{location}}&monster={{monster}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({like: document.getElementsByName('text')[0].value})
+            }).then(() => window.location.href = `/drop?login={{login}}&character={{character}}&location={{location}}&monster={{monster}}`);
+    }
+</script>

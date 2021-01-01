@@ -1,0 +1,34 @@
+<div class="skill-tab">
+    <button class="order" onclick="orderSkill('{{order}}')">Order by name ({{order}})</button>
+    <input class="text" name="text"></input>
+    <button class="search" onclick="searchSkill()">Search</button>
+</div>
+<div class="container">
+    <div class="block">
+        {{#each skills}}
+            {{>skill login=../login character=../character}}
+        {{/each}}
+    </div>
+</div>
+<div class="skill-box">
+    <button class="back" onclick="window.location.href = '/character?login={{login}}&character={{character}}'">Back to character</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function orderSkill(order) {
+        await fetch(`/orderskill?login={{login}}&character={{character}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({order: order})
+            }).then(() => window.location.href = `/skill?login={{login}}&character={{character}}`);
+    }
+
+    async function searchSkill() {
+        await fetch(`/searchskill?login={{login}}&character={{character}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({like: document.getElementsByName('text')[0].value})
+            }).then(() => window.location.href = `/skill?login={{login}}&character={{character}}`);
+    }
+</script>

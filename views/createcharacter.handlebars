@@ -1,0 +1,86 @@
+
+<div class="createcharacter-container">
+    <h1>Create character</h1>
+
+    <div class="createcharacter-image">
+        <img id="image" src="image/Question.png">
+    </div>
+
+    <div class="createcharacter-info">
+        <div>
+            <input type="text" placeholder="Enter character name" name="name" autocomplete="off" required>
+        </div>
+
+        <div>
+            <button onclick="showRace()" class="dropdown" id="raceDropdown">Show race</button>
+            <div id="raceList" class="dropdown-content">
+                {{#each races}}
+                    <button onclick="selectRace({{race_id}}, '{{race_name}}')">{{race_name}}</button>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="class">
+            <button onclick="showClass()" class="dropdown" id="classDropdown">Show class</button>
+            <div id="classList" class="dropdown-content">
+                {{#each classes}}
+                    <button onclick="selectClass({{class_id}}, '{{class_name}}')">{{class_name}}</button>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="createcharacter-box">
+    <button class="create" onclick="createCharacter()">Create character</button>
+    <button class="back" onclick="window.location.href = '/user?login={{login}}'">Back to characters</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    var race = null;
+    var _class = null
+
+    function showRace() {
+        document.getElementById("raceList").classList.toggle("show");
+    }
+
+    function selectRace(id, name) {
+        document.getElementById("raceList").classList.toggle("show");
+        document.getElementById("raceDropdown").innerText = name;
+        race = id;
+        loadImage();
+    }
+
+    function showClass() {
+        document.getElementById("classList").classList.toggle("show");
+    }
+
+    function selectClass(id, name) {
+        document.getElementById("classList").classList.toggle("show");
+        document.getElementById("classDropdown").innerText = name;
+        _class = id;
+        loadImage();
+    }
+
+    async function loadImage() {
+        if (race && _class) {
+            var response = await fetch(`/loadcharacterimage?login={{login}}&race=${race}&class=${_class}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'}
+            })
+            var imagePath = await response.text();
+            document.getElementById("image").src = imagePath;
+        }
+    }
+
+    async function createCharacter() {
+        var name = document.getElementsByName('name')[0].value;
+        if (name && race &&  _class) {
+            await fetch(`/createcharacter?login={{login}}&name=${name}&race=${race}&class=${_class}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'}
+            }).then(() => window.location.href = `/user?login={{login}}`);
+        }
+    }
+</script>

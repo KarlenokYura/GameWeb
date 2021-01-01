@@ -1,0 +1,19 @@
+<div class="record" data-key="{{character_id}}" onclick="window.location.href = '/character?login={{login}}&character={{character_name}}'">
+    <h2>{{character_name}}</h2>
+    <div class="record-character-image">
+        <img src={{race_class_image}} onload="test()">
+    </div>
+    <div class="record-character-info">
+        <div class="character-race"><h4>Race: {{race_name}}</h4></div>
+        <div class="character-class"><h4>Class: {{class_name}}</h4></div>
+        <div class="character-location"><h4>Location: {{location_name}}</h4></div>
+    </div>
+    <div class="record-character-levelexp">
+        <div class="character-level"><h4>Level: {{character_level}} / 20</h4></div>
+        <div class="character-exp"><h4>Exp: {{character_exp}}</h4></div>
+    </div>
+    <div class="record-character-healthmana">
+        <div class="character-health"><h4>Health: {{character_health}} <span class="green-text">+ {{#if item_health}}{{item_health}}{{else}}0{{/if}}</span> / {{character_max_health}} <span class="green-text">+ {{#if item_health}}{{item_health}}{{else}}0{{/if}}</span></h4></div>
+        <div class="character-mana"><h4>Mana: {{character_mana}} <span class="green-text">+ {{#if item_mana}}{{item_mana}}{{else}}0{{/if}}</span> / {{character_max_mana}} <span class="green-text">+ {{#if item_mana}}{{item_mana}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+</div>

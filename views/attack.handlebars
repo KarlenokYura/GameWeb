@@ -1,0 +1,190 @@
+<div class="attack-container">
+    <h1>Battle</h1>
+    <div class="attack-character">
+        <h2>{{character.character_name}}</h2>
+        <div class="character-image">
+            <img src={{character.race_class_image}} onload="checkSpeedAndMind({{character.character_speed}}, {{#if character.item_speed}}{{character.item_speed}}{{else}}0{{/if}}, {{monster.monster_speed}}, {{#if monster.item_speed}}{{monster.item_speed}}{{else}}0{{/if}}, {{character.character_mind}}, {{#if character.item_mind}}{{character.item_mind}}{{else}}0{{/if}}, {{monster.monster_mind}}, {{#if monster.item_mind}}{{monster.item_mind}}{{else}}0{{/if}})">
+        </div>
+        <div class="character-info">
+            <div class="character-race"><h4>Race: {{character.race_name}}</h4></div>
+            <div class="character-class"><h4>Class: {{character.class_name}}</h4></div>
+            <div class="character-location"><h4>Location: {{character.location_name}}</h4></div>
+            <div class="character-level"><h4>Level: {{character.character_level}} / 20</h4></div>
+        </div>
+        <div class="character-healthmana">
+            <div class="character-health" id="character-health"><h4>Health: {{character.character_health}} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span> / {{character.character_max_health}} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span></h4></div>
+            <div class="character-mana"><h4>Mana: {{character.character_mana}} <span class="green-text">+ {{#if character.item_mana}}{{character.item_mana}}{{else}}0{{/if}}</span> / {{character.character_max_mana}} <span class="green-text">+ {{#if character.item_mana}}{{character.item_mana}}{{else}}0{{/if}}</span></h4></div>
+        </div>
+        <div class="character-talants">
+            <div class="character-power"><h4>Power: {{character.character_power}} <span class="green-text">+ {{#if character.item_power}}{{character.item_power}}{{else}}0{{/if}}</span></h4></div>
+            <div class="character-speed"><h4>Speed: {{character.character_speed}} <span class="green-text">+ {{#if character.item_speed}}{{character.item_speed}}{{else}}0{{/if}}</span></h4></div>
+            <div class="character-mind"><h4>Mind: {{character.character_mind}} <span class="green-text">+ {{#if character.item_mind}}{{character.item_mind}}{{else}}0{{/if}}</span></h4></div>
+        </div>
+        <div class="character-box">
+            <button class="character-attack" id="character-attack" onclick="characterAttack({{character.character_power}}, {{#if character.item_power}}{{character.item_power}}{{else}}0{{/if}})">Attack</button>
+            <button class="character-run" id="character-run" disabled onclick="characterRun()">Run</button>
+            <button class="character-miss" id="character-miss" disabled onclick="characterMiss()">Miss</button>
+        </div>
+        <div class="character-skill">
+            <button class="character-level-5" disabled>Level-5</button>
+            <button class="character-level-10" disabled>Level-10</button>
+            <button class="character-level-15" disabled>Level-15</button>
+            <button class="character-level-20" disabled>Level-20</button>
+        </div>
+    </div>
+        
+    <div class="attack-monster">
+        <h2>{{monster.monster_name}}</h2>
+        <div class="monster-image">
+            <img src={{monster.monster_image}}>
+        </div>
+        <div class="monster-info">
+            <div class="monster-race"><h4>Race: {{monster.race_name}}</h4></div>
+            <div class="monster-class"><h4>Class: {{monster.class_name}}</h4></div>
+            <div class="monster-location"><h4>Location: {{monster.location_name}}</h4></div>
+            <div class="monster-level"><h4>Level: {{monster.monster_level}} / 20</h4></div>
+        </div>
+        <div class="monster-healthmana">
+            <div class="monster-health" id="monster-health"><h4>Health: {{monster.monster_health}} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span> / {{monster.monster_max_health}} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span></h4></div>
+            <div class="monster-mana"><h4>Mana: {{monster.monster_mana}} <span class="green-text">+ {{#if monster.item_mana}}{{monster.item_mana}}{{else}}0{{/if}}</span> / {{monster.monster_max_mana}} <span class="green-text">+ {{#if monster.item_mana}}{{monster.item_mana}}{{else}}0{{/if}}</span></h4></div>
+        </div>
+        <div class="monster-talants">
+            <div class="monster-power"><h4>Power: {{monster.monster_power}} <span class="green-text">+ {{#if monster.item_power}}{{monster.item_power}}{{else}}0{{/if}}</span></h4></div>
+            <div class="monster-speed"><h4>Speed: {{monster.monster_speed}} <span class="green-text">+ {{#if monster.item_speed}}{{monster.item_speed}}{{else}}0{{/if}}</span></h4></div>
+            <div class="monster-mind"><h4>Mind: {{monster.monster_mind}} <span class="green-text">+ {{#if monster.item_mind}}{{monster.item_mind}}{{else}}0{{/if}}</span></h4></div>
+        </div>
+        <div class="monster-box">
+            <button class="monster-attack" id="monster-attack" disabled onclick="monsterAttack({{monster.monster_power}}, {{#if monster.item_power}}{{monster.item_power}}{{else}}0{{/if}})">Attack</button>
+            <button class="monster-run" id="monster-run" disabled onclick="monsterRun()">Run</button>
+            <button class="monster-miss" id="monster-miss" disabled onclick="monsterMiss()">Miss</button>
+        </div>
+        <div class="monster-skill">
+            <button class="monster-level-5" disabled>Level-5</button>
+            <button class="monster-level-10" disabled>Level-10</button>
+            <button class="monster-level-15" disabled>Level-15</button>
+            <button class="monster-level-20" disabled>Level-20</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ws = new WebSocket('ws://localhost:8080');
+
+    var character_speed = 0;
+    var character_item_speed = 0;
+    var monster_speed = 0;
+    var monster_item_speed = 0;
+    var character_mind = 0;
+    var character_item_mind = 0;
+    var monster_mind = 0;
+    var monster_item_mind = 0;
+
+    var character_miss = false;
+    var monster_miss = false;
+
+    function checkSpeedAndMind(_character_speed, _character_item_speed, _monster_speed, _monster_item_speed, _character_mind, _character_item_mind, _monster_mind, _monster_item_mind) {
+        character_speed = _character_speed;
+        character_item_speed = _character_item_speed;
+        monster_speed = _monster_speed;
+        monster_item_speed = _monster_item_speed;
+        character_mind = _character_mind;
+        character_item_mind = _character_item_mind;
+        monster_mind = _monster_mind;
+        monster_item_mind = _monster_item_mind;
+
+        if (character_speed + character_item_speed > monster_speed + monster_item_speed) {
+            document.getElementById("character-run").disabled = false;
+        }
+
+        if (character_mind + character_item_mind > monster_mind + monster_item_mind) {
+            document.getElementById("character-miss").disabled = false;
+        }
+    }
+
+    function characterAttack(character_power, item_power) {
+        if (!monster_miss) {
+            ws.send(JSON.stringify({characterAttack: character_power + item_power}));
+        }
+        else {
+            monster_miss = false;
+        }
+        document.getElementById("character-attack").disabled = true;
+        document.getElementById("monster-attack").disabled = false;
+        document.getElementById("character-run").disabled = true;
+        if (character_speed + character_item_speed <= monster_speed + monster_item_speed) {
+            document.getElementById("monster-run").disabled = false;
+        }
+        document.getElementById("character-miss").disabled = true;
+        if (character_mind + character_item_mind <= monster_mind + monster_item_mind) {
+            document.getElementById("monster-mind").disabled = false;
+        }
+    }
+
+    function characterRun() {
+        ws.send(JSON.stringify({characterRun: 0}));
+    }
+
+    function characterMiss() {
+        character_miss = true;
+        document.getElementById("character-attack").disabled = true;
+        document.getElementById("monster-attack").disabled = false;
+        document.getElementById("character-run").disabled = true;
+        if (character_speed + character_item_speed <= monster_speed + monster_item_speed) {
+            document.getElementById("monster-run").disabled = false;
+        }
+        document.getElementById("character-miss").disabled = true;
+        if (character_mind + character_item_mind <= monster_mind + monster_item_mind) {
+            document.getElementById("monster-mind").disabled = false;
+        }
+    }
+
+    function monsterAttack(monster_power, item_power) {
+        if (!character_miss) {
+            ws.send(JSON.stringify({monsterAttack: monster_power + item_power}));
+        }
+        else {
+            character_miss = false;
+        }
+        document.getElementById("character-attack").disabled = false;
+        document.getElementById("monster-attack").disabled = true;
+        if (character_speed + character_item_speed > monster_speed + monster_item_speed) {
+            document.getElementById("character-run").disabled = false;
+        }
+        document.getElementById("monster-run").disabled = true;
+        if (character_mind + character_item_mind > monster_mind + monster_item_mind) {
+            document.getElementById("character-miss").disabled = false;
+        }
+        document.getElementById("monster-miss").disabled = true;
+    }
+
+    function monsterRun() {
+        ws.send(JSON.stringify({monsterRun: 0}));
+    }
+
+    function monsterMiss() {
+        monster_miss = true;
+        document.getElementById("character-attack").disabled = false;
+        document.getElementById("monster-attack").disabled = true;
+        if (character_speed + character_item_speed > monster_speed + monster_item_speed) {
+            document.getElementById("character-run").disabled = false;
+        }
+        document.getElementById("monster-run").disabled = true;
+                if (character_mind + character_item_mind > monster_mind + monster_item_mind) {
+            document.getElementById("character-mind").disabled = false;
+        }
+        document.getElementById("monster-miss").disabled = true;
+    }
+
+    ws.onopen = () => console.log("OPEN");
+    ws.onclose = () => {
+        window.location.href = '/checkmonster?login={{login}}&character={{character.character_name}}&location={{location}}&monster={{monster.monster_name}}';
+    }
+    ws.onmessage = response => {
+        if (JSON.parse(response.data).monsterHealth !== undefined) {
+            document.getElementById("monster-health").innerHTML = `<h4>Health: ${JSON.parse(response.data).monsterHealth} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span> / {{monster.monster_max_health}} <span class="green-text">+ {{#if monster.item_health}}{{monster.item_health}}{{else}}0{{/if}}</span></h4>`;
+        }
+        else if (JSON.parse(response.data).characterHealth !== undefined) {
+            document.getElementById("character-health").innerHTML = `<h4>Health: ${JSON.parse(response.data).characterHealth} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span> / {{character.character_max_health}} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span></h4>`;
+        }
+    }
+</script>

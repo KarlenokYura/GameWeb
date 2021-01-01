@@ -1,0 +1,58 @@
+.record-npc-image {
+    position: relative;
+    left: 1.4%;
+    height: 62.5%;
+    width: 11.95%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.record-npc-image img {
+    height: 100%;
+}
+
+.record-npc-info {
+    position: relative;
+    top: -57.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-npc-info .npc-race {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-npc-info .npc-prof {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-npc-info .npc-location {
+    position: relative;
+    margin-top: -4.4%;
+    left: 68.5%;
+    width: 30%;
+}
+
+.record-npc-levelexp {
+    position: relative;
+    top: -57.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-npc-levelexp .npc-level {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}

@@ -1,0 +1,35 @@
+<div class="checkitem-container">
+    <h1>{{item.item_name}}</h1>
+    <div class="checkitem-image">
+        <img src={{item.item_image}}>
+    </div>
+    <div class="checkitem-info">
+        <div class="checkitem-type"><h4>Type: {{item.item_type}}</h4></div>
+    </div>
+    <div class="checkitem-healthmana">
+        <div class="checkitem-health"><h4>Health: {{item.item_health}}</h4></div>
+        <div class="checkitem-mana"><h4>Mana: {{item.item_mana}}</h4></div>
+    </div>
+        <div class="checkitem-talants">
+        <div class="checkitem-power"><h4>Power: {{item.item_power}}</h4></div>
+        <div class="checkitem-speed"><h4>Speed: {{item.item_speed}}</h4></div>
+        <div class="checkitem-mind"><h4>Mind: {{item.item_mind}}</h4></div>
+    </div>
+</div>
+<div class="checkitem-back">
+    <button class="delete" onclick="deleteItem()">Delete item</button>
+    <button class="back" onclick="window.location.href = '/item?login={{login}}&character={{character}}'">Back to items</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function deleteItem() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            window.location.href = `/item?login={{login}}&character={{character}}`;
+        }};
+        xhttp.open("GET", '/deleteitem?login={{login}}&character={{character}}&item={{character_item_id}}', true);
+        xhttp.send();
+    }
+</script>

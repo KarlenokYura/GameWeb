@@ -1,0 +1,34 @@
+<div class="item-tab">
+    <button class="order" onclick="orderItem('{{order}}')">Order by name ({{order}})</button>
+    <input class="text" name="text"></input>
+    <button class="search" onclick="searchItem()">Search</button>
+</div>
+<div class="container">
+    <div class="block">
+        {{#each items}}
+            {{>item login=../login character=../character}}
+        {{/each}}
+    </div>
+</div>
+<div class="item-box">
+    <button class="back" onclick="window.location.href = '/character?login={{login}}&character={{character}}'">Back to character</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function orderItem(order) {
+        await fetch(`/orderitem?login={{login}}&character={{character}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({order: order})
+            }).then(() => window.location.href = `/item?login={{login}}&character={{character}}`);
+    }
+
+    async function searchItem() {
+        await fetch(`/searchitem?login={{login}}&character={{character}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({like: document.getElementsByName('text')[0].value})
+            }).then(() => window.location.href = `/item?login={{login}}&character={{character}}`);
+    }
+</script>

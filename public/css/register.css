@@ -1,0 +1,111 @@
+.register-container {
+    position: relative;
+    top: 4%;
+    height: 82%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.register-container h1 {
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+}
+
+.register-container img {
+    margin-left: 2%;
+    width: 96%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.register-container .login {
+    position: relative;
+    margin-top: 1.3%;
+    left: 2%;
+    width: 17.9%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+}
+
+.register-container .password {
+    position: relative;
+    margin-top: 1.3%;
+    left: 3%;
+    width: 17.9%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+}
+
+.register-container .name {
+    position: relative;
+    margin-top: 1.3%;
+    left: 4%;
+    width: 17.9%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+}
+
+.register-container .surname {
+    position: relative;
+    margin-top: 1.3%;
+    left: 5%;
+    width: 17.9%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+}
+
+.register-container .button {
+    position: relative;
+    margin-top: 1.3%;
+    left: 6%;
+    width: 17.9%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #F5F5F5;
+}
+
+.register-container .button:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.register-box  {
+    position: relative;
+    top: 5%;
+    height: 8%;
+}
+
+.register-box .login {
+    position: relative;
+    left: 5%;
+    width: 90.4%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.register-box .login:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}

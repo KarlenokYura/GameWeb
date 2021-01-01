@@ -1,0 +1,635 @@
+.attack-container {
+    position: relative;
+    top: 5%;
+    height: 90%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.attack-container h1 {
+    margin-top: 1%;
+    height: 15%;
+    width: 99.8%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: 300%;
+    text-align: center;
+}
+
+.attack-character {
+    position: relative;
+    top: -9%;
+    height: 85%;
+    left: 0.6%;
+    width: 49%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.attack-character h2 {
+    margin-top: 2%;
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+    font-size: 200%;
+}
+
+.attack-character .character-image {
+    position: relative;
+    left: 1.4%;
+    height: 40%;
+    width: 32.7%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.attack-character .character-image img {
+    height: 100%;
+}
+
+.attack-character .character-info {
+    position: relative;
+    top: -42%;
+    width: 50%;
+    left: 40%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-character .character-healthmana {
+    position: relative;
+    top: -40%;
+    width: 80%;
+    left: 1%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-character .character-healthmana .character-health {
+    position: relative;
+    left: 1.5%;
+    width: 50%;
+}
+
+.attack-character .character-healthmana .character-mana {
+    position: relative;
+    margin-top: -9.8%;
+    left: 61%;
+    width: 50%;
+}
+
+.attack-character .character-talants {
+    position: relative;
+    top: -40%;
+    width: 80%;
+    left: 1%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-character .character-talants .character-power {
+    position: relative;
+    left: 1.5%;
+    width: 50%;
+}
+
+.attack-character .character-talants .character-speed {
+    position: relative;
+    margin-top: -9.8%;
+    left: 42.5%;
+    width: 50%;
+}
+
+.attack-character .character-talants .character-mind {
+    position: relative;
+    margin-top: -9.8%;
+    left: 82.5%;
+    width: 50%;
+}
+
+.attack-character .character-box {
+    position: relative;
+    top: -40%;
+    width: 100%;
+    left: 1%;
+}
+
+.attack-character .character-box .character-attack {
+    position: relative;
+    left: 1.1%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-attack:disabled {
+    position: relative;
+    left: 1.1%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-run {
+    position: relative;
+    left: 1.5%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-run:disabled {
+    position: relative;
+    left: 1.5%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-miss {
+    position: relative;
+    left: 1.9%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-miss:disabled {
+    position: relative;
+    left: 1.9%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-box .character-attack:hover, .character-run:hover, .character-miss:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.attack-character .character-box .character-attack:disabled:hover, .character-run:disabled:hover, .character-miss:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}
+
+.attack-character .character-skill {
+    position: relative;
+    top: -35%;
+    width: 100%;
+    left: 1%;
+}
+
+.attack-character .character-skill .character-level-5 {
+    position: relative;
+    left: 1.1%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-5:disabled {
+    position: relative;
+    left: 1.1%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-10 {
+    position: relative;
+    left: 1.5%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-10:disabled {
+    position: relative;
+    left: 1.5%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-15 {
+    position: relative;
+    left: 1.9%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-15:disabled {
+    position: relative;
+    left: 1.9%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-20 {
+    position: relative;
+    left: 2.3%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-20:disabled {
+    position: relative;
+    left: 2.3%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-character .character-skill .character-level-5:hover, .character-level-10:hover, .character-level-15:hover, .character-level-20:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.attack-character .character-skill .character-level-5:disabled:hover, .character-level-10:disabled:hover, .character-level-15:disabled:hover, .character-level-20:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}
+
+.attack-monster {
+    position: relative;
+    top: -94.95%;
+    height: 85%;
+    left: 50%;
+    width: 49%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.attack-monster h2 {
+    margin-top: 2%;
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+    font-size: 200%;
+}
+
+.attack-monster .monster-image {
+    position: relative;
+    left: 1.4%;
+    height: 40%;
+    width: 32.6%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.attack-monster .monster-image img {
+    height: 100%;
+}
+
+.attack-monster .monster-info {
+    position: relative;
+    top: -42%;
+    width: 50%;
+    left: 40%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-monster .monster-healthmana {
+    position: relative;
+    top: -40%;
+    width: 80%;
+    left: 1%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-monster .monster-healthmana .monster-health {
+    position: relative;
+    left: 1.5%;
+    width: 50%;
+}
+
+.attack-monster .monster-healthmana .monster-mana {
+    position: relative;
+    margin-top: -9.8%;
+    left: 61%;
+    width: 50%;
+}
+
+.attack-monster .monster-talants {
+    position: relative;
+    top: -40%;
+    width: 80%;
+    left: 1%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.attack-monster .monster-talants .monster-power {
+    position: relative;
+    left: 1.5%;
+    width: 50%;
+}
+
+.attack-monster .monster-talants .monster-speed {
+    position: relative;
+    margin-top: -9.8%;
+    left: 42.5%;
+    width: 50%;
+}
+
+.attack-monster .monster-talants .monster-mind {
+    position: relative;
+    margin-top: -9.8%;
+    left: 82.5%;
+    width: 50%;
+}
+
+.attack-monster .monster-box {
+    position: relative;
+    top: -40%;
+    width: 100%;
+    height: 6.5%;
+    left: 1%;
+}
+
+.attack-monster .monster-box .monster-attack {
+    position: relative;
+    left: 1.1%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-attack:disabled {
+    position: relative;
+    left: 1.1%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-run {
+    position: relative;
+    left: 1.5%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-run:disabled {
+    position: relative;
+    left: 1.5%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-miss {
+    position: relative;
+    left: 1.9%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-miss:disabled {
+    position: relative;
+    left: 1.9%;
+    width: 31.2%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-box .monster-attack:hover, .monster-run:hover, .monster-miss:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.attack-monster .monster-box .monster-attack:disabled:hover, .monster-run:disabled:hover, .monster-miss:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}
+
+.attack-monster .monster-skill {
+    position: relative;
+    top: -35%;
+    width: 100%;
+    left: 1%;
+}
+
+.attack-monster .monster-skill .monster-level-5 {
+    position: relative;
+    left: 1.1%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-5:disabled {
+    position: relative;
+    left: 1.1%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-10 {
+    position: relative;
+    left: 1.5%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-10:disabled {
+    position: relative;
+    left: 1.5%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-15 {
+    position: relative;
+    left: 1.9%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-15:disabled {
+    position: relative;
+    left: 1.9%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-20 {
+    position: relative;
+    left: 2.3%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-20:disabled {
+    position: relative;
+    left: 2.3%;
+    width: 23.1%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.attack-monster .monster-skill .monster-level-5:hover, .monster-level-10:hover, .monster-level-15:hover, .monster-level-20:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.attack-monster .monster-skill .monster-level-5:disabled:hover, .monster-level-10:disabled:hover, .monster-level-15:disabled:hover, .monster-level-20:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}

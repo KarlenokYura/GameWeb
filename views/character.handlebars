@@ -1,0 +1,87 @@
+<div class="character-tab">
+    <button class="location" onclick="window.location.href = '/location?login={{login}}&character={{character.character_name}}'">Location</button>
+    <button class="item" onclick="window.location.href = '/item?login={{login}}&character={{character.character_name}}'">Items</button>
+    <button class="skill" onclick="window.location.href = '/skill?login={{login}}&character={{character.character_name}}'">Skills</button>
+</div>
+<div class="character-container">
+    <input id="name" type="text" value="{{character.character_name}}" name="name" autocomplete="off" disabled></input>
+    <div class="character-image">
+        <img src={{character.race_class_image}} onload="checkExp({{character.character_exp}}, {{character.character_level}})">
+    </div>
+    <div class="character-info">
+        <div class="character-race"><h4>Race: {{character.race_name}}</h4></div>
+        <div class="character-class"><h4>Class: {{character.class_name}}</h4></div>
+        <div class="character-location"><h4>Location: {{character.location_name}}</h4></div>
+    </div>
+    <div class="character-levelexp">
+        <div class="character-level"><h4>Level: {{character.character_level}} / 20</h4></div>
+        <div class="character-exp" id="exp"><h4>Exp: {{character.character_exp}} / </h4></div>
+    </div>
+    <div class="character-healthmana">
+        <div class="character-health"><h4>Health: {{character.character_health}} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span> / {{character.character_max_health}} <span class="green-text">+ {{#if character.item_health}}{{character.item_health}}{{else}}0{{/if}}</span></h4></div>
+        <div class="character-mana"><h4>Mana: {{character.character_mana}} <span class="green-text">+ {{#if character.item_mana}}{{character.item_mana}}{{else}}0{{/if}}</span> / {{character.character_max_mana}} <span class="green-text">+ {{#if character.item_mana}}{{character.item_mana}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+        <div class="character-talants">
+        <div class="character-power"><h4>Power: {{character.character_power}} <span class="green-text">+ {{#if character.item_power}}{{character.item_power}}{{else}}0{{/if}}</span></h4></div>
+        <div class="character-speed"><h4>Speed: {{character.character_speed}} <span class="green-text">+ {{#if character.item_speed}}{{character.item_speed}}{{else}}0{{/if}}</span></h4></div>
+        <div class="character-mind"><h4>Mind: {{character.character_mind}} <span class="green-text">+ {{#if character.item_mind}}{{character.item_mind}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+</div>
+<div class="character-edit">
+    <button id="edit" class="edit" onclick="editCharacter()">Edit character</button>
+    <button id="commit" class="commit" disabled onclick="commitCharacter()">Commit changes</button>
+    <button id="rollback" class="rollback" disabled onclick="rollbackCharacter()">Rollback changes</button>
+</div>
+<div class="character-back">
+    <button class="delete" onclick="deleteCharacter()">Delete character</button>
+    <button class="back" onclick="window.location.href = '/user?login={{login}}'">Back to characters</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    var name = null;
+
+    function editCharacter() {
+        name = document.getElementsByName('name')[0].value;
+        document.getElementById("name").disabled = false;
+        document.getElementById("edit").disabled = true;
+        document.getElementById("commit").disabled = false;
+        document.getElementById("rollback").disabled = false;
+    }
+
+    async function commitCharacter() {
+        if (document.getElementsByName('name')[0].value !== "") {
+            name = document.getElementsByName('name')[0].value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                window.location.href = `/character?login={{login}}&character=${name}`;
+            }};
+            xhttp.open("GET", `/updatecharacter?login={{login}}&old={{character.character_name}}&new=${name}`, true);
+            xhttp.send();
+        }
+    }
+
+    function rollbackCharacter() {
+        document.getElementsByName('name')[0].value = name;
+        document.getElementById("name").disabled = true;
+        document.getElementById("edit").disabled = false;
+        document.getElementById("commit").disabled = true;
+        document.getElementById("rollback").disabled = true;
+    }
+
+    async function deleteCharacter() {
+        name = document.getElementsByName('name')[0].value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            window.location.href = `/user?login={{login}}`;
+        }};
+        xhttp.open("GET", '/deletecharacter?login={{login}}&character={{character.character_name}}', true);
+        xhttp.send();
+    }
+
+    async function checkExp(exp, level) {
+        document.getElementById("exp").innerHTML = "<h4>Exp: " + exp + " / " +  Math.pow(2, level + 1) + "</h4>";
+    }
+</script>

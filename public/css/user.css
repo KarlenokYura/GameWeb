@@ -1,0 +1,100 @@
+.user-tab  {
+    position: relative;
+    top: 4%;
+    height: 8%;
+}
+
+.user-tab .order {
+    position: relative;
+    left: 5%;
+    width: 29.7%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.user-tab .text {
+    position: relative;
+    left: 5.4%;
+    width: 29%;
+    height: 85%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #000000;
+}
+
+.user-tab .search {
+    position: relative;
+    left: 5.8%;
+    width: 29.7%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.user-tab .order:hover, .search:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.user-box  {
+    position: relative;
+    top: 6%;
+    height: 8%;
+}
+
+.user-box .createcharacter {
+    position: relative;
+    left: 5%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.user-box .logout {
+    position: relative;
+    left: 5.4%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.user-box .createcharacter:hover, .logout:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.user-box .createcharacter:disabled {
+    position: relative;
+    left: 5%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.user-box .createcharacter:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}

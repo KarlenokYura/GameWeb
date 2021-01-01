@@ -1,0 +1,88 @@
+.record-drop-image {
+    position: relative;
+    left: 1.4%;
+    height: 62.5%;
+    width: 11.95%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.record-drop-image img {
+    height: 100%;
+}
+
+.record-drop-typechance {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-drop-typechance .drop-type {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-drop-typechance .drop-chance {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-drop-healthmana {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-drop-healthmana .drop-health {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-drop-healthmana .drop-mana {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-drop-talants {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-drop-talants .drop-power {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-drop-talants .drop-speed {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-drop-talants .drop-mind {
+    position: relative;
+    margin-top: -4.4%;
+    left: 68.5%;
+    width: 30%;
+}

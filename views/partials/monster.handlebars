@@ -1,0 +1,18 @@
+<div class="record" data-key="{{monster_id}}" onclick="window.location.href = '/checkmonster?login={{login}}&character={{character}}&location={{location}}&monster={{monster_name}}'">
+    <h2>{{monster_name}}</h2>
+    <div class="record-monster-image">
+        <img src={{monster_image}}>
+    </div>
+    <div class="record-monster-info">
+        <div class="monster-race"><h4>Race: {{race_name}}</h4></div>
+        <div class="monster-class"><h4>Class: {{class_name}}</h4></div>
+        <div class="monster-location"><h4>Location: {{location_name}}</h4></div>
+    </div>
+    <div class="record-monster-levelexp">
+        <div class="monster-level"><h4>Level: {{monster_level}}</h4></div>
+    </div>
+    <div class="record-monster-healthmana">
+        <div class="monster-health"><h4>Health: {{monster_health}} <span class="green-text">+ {{#if item_health}}{{item_health}}{{else}}0{{/if}}</span> / {{monster_max_health}}  <span class="green-text">+ {{#if item_health}}{{item_health}}{{else}}0{{/if}}</span></h4></div>
+        <div class="monster-mana"><h4>Mana: {{monster_mana}} <span class="green-text">+ {{#if item_mana}}{{item_mana}}{{else}}0{{/if}}</span> / {{monster_max_mana}} <span class="green-text">+ {{#if item_mana}}{{item_mana}}{{else}}0{{/if}}</span></h4></div>
+    </div>
+</div>

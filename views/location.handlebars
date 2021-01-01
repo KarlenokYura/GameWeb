@@ -1,0 +1,66 @@
+<div class="location-tab">
+    <button class="monster" onclick="window.location.href = '/monster?login={{login}}&character={{character}}&location={{current.location_name}}'">Monsters</button>
+    <button class="npc" onclick="window.location.href = '/npc?login={{login}}&character={{character}}&location={{current.location_name}}'">NPCs</button>
+</div>
+<div class="location-container">
+    <h1>{{current.location_name}}</h1>
+    <div class="location-image">
+        <img src={{current.location_image}} onload="checkLocation({{current.location_x}}, {{current.location_y}}, {{current.location_z}})">
+    </div>
+    <div class="location-level">
+        <div class="location-min-level"><h4>Min level: {{current.location_min_level}}</h4></div>
+        <div class="location-max-level"><h4>Max level: {{current.location_max_level}}</h4></div>
+    </div>
+    <div class="location-floor">
+        <div class="location-dimension" id="dimension"><h4>Dimension: </h4></div>
+    </div>
+    <div class="location-position">
+        <div class="location-way" id="way"><h4>Way: </h4></div>
+    </div>
+</div>
+<div class="location-box">
+    <button id="left" class="left" onclick="changeLocation({{left.location_id}})" disabled>Move left</button>
+    <button id="right" class="right" onclick="changeLocation({{right.location_id}})" disabled>Move right</button>
+    <button id="forward" class="forward" onclick="changeLocation({{forward.location_id}})" disabled>Move forward</button>
+    <button id="back" class="back" onclick="changeLocation({{back.location_id}})" disabled>Move back</button>
+    <button id="top" class="top" onclick="changeLocation({{top.location_id}})" disabled>Move top</button>
+    <button id="bottom" class="bottom" onclick="changeLocation({{bottom.location_id}})" disabled>Move bottom</button>
+</div>
+<div class="location-back">
+    <button class="back" onclick="window.location.href = '/character?login={{login}}&character={{character}}'">Back to character</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function checkLocation(x, y, z) {
+        {{#if left}}document.getElementById("left").disabled = false{{/if}}
+        {{#if right}}document.getElementById("right").disabled = false{{/if}}
+        {{#if forward}}document.getElementById("forward").disabled = false{{/if}}
+        {{#if back}}document.getElementById("back").disabled = false{{/if}}
+        {{#if top}}document.getElementById("top").disabled = false{{/if}}
+        {{#if bottom}}document.getElementById("bottom").disabled = false{{/if}}
+
+        if (z === 0) document.getElementById("dimension").innerHTML = "<h4>Dimension: Hell</h4>"
+        else if (z === 1) document.getElementById("dimension").innerHTML = "<h4>Dimension: Earth</h4>"
+        else if (z === 2) document.getElementById("dimension").innerHTML = "<h4>Dimension: Paradise</h4>"
+
+        if (3 * y + x === 0) document.getElementById("way").innerHTML = "<h4>Way: North-West</h4>"
+        else if (3 * y + x === 1) document.getElementById("way").innerHTML = "<h4>Way: North</h4>"
+        else if (3 * y + x === 2) document.getElementById("way").innerHTML = "<h4>Way: North-East</h4>"
+        else if (3 * y + x === 3) document.getElementById("way").innerHTML = "<h4>Way: West</h4>"
+        else if (3 * y + x === 4) document.getElementById("way").innerHTML = "<h4>Way: Center</h4>"
+        else if (3 * y + x === 5) document.getElementById("way").innerHTML = "<h4>Way: East</h4>"
+        else if (3 * y + x === 6) document.getElementById("way").innerHTML = "<h4>Way: South-West</h>"
+        else if (3 * y + x === 7) document.getElementById("way").innerHTML = "<h4>Way: South</h4>"
+        else if (3 * y + x === 8) document.getElementById("way").innerHTML = "<h4>Way: South-East</h4>"
+    }
+
+    async function changeLocation(id) {
+        console.log(id);
+        await fetch(`/changelocation?login={{login}}&character={{character}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id: id})
+        }).then(() => window.location.href = `/location?login={{login}}&character={{character}}`);
+    }
+</script>

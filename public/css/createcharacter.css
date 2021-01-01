@@ -1,0 +1,139 @@
+.createcharacter-container {
+    position: relative;
+    top: 5%;
+    height: 81%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.createcharacter-container h1 {
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+}
+
+.createcharacter-image {
+    position: relative;
+    left: 1.4%;
+    width: 34.4%;
+    height: 81.2%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.createcharacter-image img {
+    height: 100%;
+}
+
+.createcharacter-info {
+    margin-top: -34.8%;
+    margin-left: 37%;
+}
+
+.createcharacter-info input {
+    position: relative;
+    left: 2%;
+    width: 93.5%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+}
+
+.createcharacter-info .dropdown {
+    position: relative;
+    margin-top: 1%;
+    left: 2%;
+    width: 94.5%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #F5F5F5;
+}
+
+.createcharacter-info .dropdown:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+  
+.createcharacter-info .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 38.2%;
+    width: 59.8%;
+    z-index: 1;
+}
+  
+.createcharacter-info .dropdown-content button {
+    width: 100%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    font-family: 'Showcard';
+    font-size: 150%;
+    color: #000000;
+    display: block;
+}
+  
+.createcharacter-info .dropdown-content button:hover {
+    background-color: #ddd;
+    box-shadow: 1px 1px 2px 2px #779BB8;
+    
+}
+  
+.createcharacter-info .show {
+    display: block;
+}
+
+.createcharacter-box  {
+    position: relative;
+    top: 6%;
+    height: 8%;
+}
+
+.createcharacter-box .create {
+    position: relative;
+    left: 5%;
+    width: 29.7%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.createcharacter-box .back {
+    position: relative;
+    left: 5.4%;
+    width: 29.7%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.createcharacter-box .logout {
+    position: relative;
+    left: 5.8%;
+    width: 29.7%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.createcharacter-box .create:hover, .back:hover, .logout:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}

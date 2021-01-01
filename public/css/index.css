@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Showcard;
+    src: url(Marvin.otf);
+  }
+
+html, body {
+    height: 100%;
+    background-color: #88B0D1;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    top: 5%;
+    height: 73%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.container h1 {
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+}
+
+.container h2 {
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+}
+
+.block {
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.block .record {
+    position: relative;
+    height: 49.3%;
+    border: 2px solid #6A8CA8;
+    background-color: #F5F5F5;
+}
+
+.block .record:hover {
+    position: relative;
+    height: 49.3%;
+    border: 2px solid #6A8CA8;
+    background-color: #B8D0E3;
+}
+
+.block .record h1 {
+    color: #000000;
+    font-family: 'Showcard';
+    text-align: center;
+}
+
+.block .record p {
+    color: #404040;
+    font-family: 'Showcard';
+    text-align: left;
+    margin-left: 2%;
+}

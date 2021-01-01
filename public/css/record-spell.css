@@ -1,0 +1,81 @@
+.record-spell-image {
+    position: relative;
+    left: 1.4%;
+    height: 62.5%;
+    width: 11.95%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.record-spell-image img {
+    height: 100%;
+}
+
+.record-spell-raceclass {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-spell-raceclass .spell-race {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-spell-raceclass .spell-class {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-spell-typelevel {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-spell-typelevel .spell-type {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-spell-typelevel .spell-level {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}
+
+.record-spell-healthmana {
+    position: relative;
+    top: -67.5%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.record-spell-healthmana .spell-health {
+    position: relative;
+    left: 1.5%;
+    width: 30%;
+}
+
+.record-spell-healthmana .spell-mana {
+    position: relative;
+    margin-top: -4.4%;
+    left: 35%;
+    width: 30%;
+}

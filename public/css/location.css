@@ -1,0 +1,331 @@
+.location-container {
+    position: relative;
+    top: 5%;
+    height: 64%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.location-container h1 {
+    height: 15%;
+    width: 99.8%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: 300%;
+    text-align: center;
+}
+
+.location-container .location-image {
+    position: relative;
+    top: -9%;
+    left: 1.4%;
+    height: 75%;
+    width: 25.1%;
+    border: 3px solid #6A8CA8;
+    border-radius: 5px;
+}
+
+.location-container .location-image img {
+    height: 100%;
+}
+
+.location-container .location-level {
+    position: relative;
+    top: -65%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.location-container .location-level .location-min-level {
+    position: relative;
+    left: 20%;
+    width: 30%;
+}
+
+.location-container .location-level .location-max-level {
+    position: relative;
+    margin-top: -4.4%;
+    left: 45%;
+    width: 30%;
+}
+
+.location-container .location-floor {
+    position: relative;
+    top: -65%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.location-container .location-floor .location-dimension {
+    position: relative;
+    left: 20%;
+    width: 30%;
+}
+
+.location-container .location-position {
+    position: relative;
+    top: -65%;
+    width: 85%;
+    left: 15%;
+    color: #000000;
+    font-family: 'Showcard';
+    font-size: larger; 
+}
+
+.location-container .location-position .location-way {
+    position: relative;
+    left: 20%;
+    width: 30%;
+}
+
+.location-tab  {
+    position: relative;
+    top: 4%;
+    height: 8%;
+}
+
+.location-tab .monster {
+    position: relative;
+    left: 5%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-tab .npc {
+    position: relative;
+    left: 5.4%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-tab .monster:hover, .npc:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.location-box {
+    position: relative;
+    top: 6%;
+    height: 8%;
+}
+
+.location-box .left {
+    position: relative;
+    left: 5%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .left:disabled {
+    position: relative;
+    left: 5%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .right {
+    position: relative;
+    left: 5.4%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .right:disabled {
+    position: relative;
+    left: 5.4%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .forward {
+    position: relative;
+    left: 5.8%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .forward:disabled {
+    position: relative;
+    left: 5.8%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .back {
+    position: relative;
+    left: 6.2%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .back:disabled {
+    position: relative;
+    left: 6.2%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .top {
+    position: relative;
+    left: 6.6%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .top:disabled {
+    position: relative;
+    left: 6.6%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .bottom {
+    position: relative;
+    left: 7%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .bottom:disabled {
+    position: relative;
+    left: 7%;
+    width: 14.525%;
+    height: 100%;
+    border: 3px solid #878787;
+    border-radius: 5px;
+    background-color: #A1A1A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-box .left:hover, .right:hover, .forward:hover, .back:hover, .top:hover, .bottom:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+
+.location-box .left:disabled:hover, .right:disabled:hover, .forward:disabled:hover .back:disabled:hover, .top:disabled:hover, .bottom:disabled:hover {
+    box-shadow: 0px 0px 0px 0px #779BB8;
+}
+
+.location-back {
+    position: relative;
+    top: 7%;
+    height: 8%;
+}
+
+.location-back .back {
+    position: relative;
+    left: 5%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-back .logout {
+    position: relative;
+    left: 5.4%;
+    width: 44.9%;
+    height: 100%;
+    border: 3px solid #0B5387;
+    border-radius: 5px;
+    background-color: #1265A1;
+    font-family: 'Showcard';
+    font-size: 125%;
+    color: #F5F5F5;
+}
+
+.location-back .back:hover, .logout:hover {
+    box-shadow: 1px 1px 2px 2px #779BB8;
+}
+

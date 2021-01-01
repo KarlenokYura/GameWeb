@@ -1,0 +1,34 @@
+<div class="npc-tab">
+    <button class="order" onclick="orderNPC('{{order}}')">Order by name ({{order}})</button>
+    <input class="text" name="text"></input>
+    <button class="search" onclick="searchNPC()">Search</button>
+</div>
+<div class="container">
+    <div class="block">
+        {{#each npcs}}
+            {{>npc login=../login character=../character location=../location}}
+        {{/each}}
+    </div>
+</div>
+<div class="npc-box">
+    <button class="back" onclick="window.location.href = '/location?login={{login}}&character={{character}}'">Back to location</button>
+    <button class="logout" onclick="window.location.href = '/logout'">Logout</button>
+</div>
+
+<script>
+    async function orderNPC(order) {
+        await fetch(`/ordernpc?login={{login}}&character={{character}}&location={{location}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({order: order})
+            }).then(() => window.location.href = `/npc?login={{login}}&character={{character}}&location={{location}}`);
+    }
+
+    async function searchNPC() {
+        await fetch(`/searchnpc?login={{login}}&character={{character}}&location={{location}}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({like: document.getElementsByName('text')[0].value})
+            }).then(() => window.location.href = `/npc?login={{login}}&character={{character}}&location={{location}}`);
+    }
+</script>
